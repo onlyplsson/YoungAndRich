@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>점심 메뉴</title>
+  </head>
+  <style type="text/css">
+    textarea {
+      font-size: 20pt;
+    }
+    body,
+    input {
+      font-size: 15pt;
+    }
+    #name {
+      width: 80px;
+    }
+  </style>
+  <body>
+    <h1>오점뭐?</h1>
+    <form action="/vote" method="POST">
+      이름 : <input type="text" id="name" name="user" /><br /><br />
+      <input type="radio" name="choice" value="학식" />학식<br />
+      <input type="radio" name="choice" value="한솥" />한솥<br />
+      <input type="radio" name="choice" value="김천" />김천<br />
+      <input type="radio" name="choice" value="피자" />피자<br />
+      <input type="radio" name="choice" value="햄버거" />햄버거<br />
+      <input type="radio" name="choice" value="중국집" />중국집<br />
+      <br />
+      <input type="submit" /><br />
+    </form>
+  </body>
+</html>

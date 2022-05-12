@@ -1,14 +1,20 @@
-var express = require("express");
-var app = express();
+const express = require("express");
+const app = express();
+const bodyParser = require("body-parser");
 
+//router
+const voteRouter = require("./routes/vote.js");
+
+//routes
+app.use("/vote", voteRouter);
+
+//미들웨어
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extends: false }));
+
+//페이지 이동
 app.get("/", function (req, res) {
   res.sendFile(__dirname + "/main.html");
 });
-app.get("/lunchvote", function (req, res) {
-  res.sendFile(__dirname + "/lunchvote.html");
-});
-app.get("/menu", function (req, res) {
-  res.sendFile(__dirname + "/menu.html");
-});
 
-app.listen(3000, () => console.log("Port 3000 start!!"));
+app.listen(3000, () => console.log("Server Start!"));

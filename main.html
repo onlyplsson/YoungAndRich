@@ -24,7 +24,11 @@
     }
   </script>
   <body>
-    <input type="button" value="투표?" onclick="GoLunchVote()" />
-    <input type="button" value="메뉴" onclick="GoMenu()" />
+    <form action="/vote" method="GET">
+      <input type="submit" value="투표" />
+    </form>
+    <form action="/vote" method="GET">
+      <input type="submit" value="메뉴" />
+    </form>
   </body>
 </html>
