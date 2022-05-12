@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메인</title>
+  </head>
+  <style type="text/css">
+    textarea {
+      font-size: 20pt;
+    }
+    body,
+    input {
+      font-size: 15pt;
+    }
+  </style>
+  <script type="text/javascript">
+    function GoLunchVote() {
+      location.href = "/lunchvote";
+    }
+    function GoMenu() {
+      location.href = "/menu";
+    }
+  </script>
+  <body>
+    <input type="button" value="오점뭐?" onclick="GoLunchVote()" />
+    <input type="button" value="메뉴" onclick="GoMenu()" />
+  </body>
+</html>
