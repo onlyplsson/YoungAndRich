@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>점심 메뉴</title>
+  </head>
+  <style type="text/css">
+    textarea {
+      font-size: 20pt;
+    }
+    body,
+    input,
+    select {
+      font-size: 15pt;
+    }
+    #name {
+      width: 80px;
+    }
+  </style>
+  <body>
+    <h1>오점뭐? <%=total %></h1>
+    <form action="/vote" method="POST">
+      <select name="user" size="9">
+        <option value="김찬혁">김찬혁</option>
+        <option value="박정균">박정균</option>
+        <option value="신지민">신지민</option>
+        <option value="안진표">안진표</option>
+        <option value="오경석">오경석</option>
+        <option value="이동인">이동인</option>
+        <option value="이해준">이해준</option>
+        <option value="정한별">정한별</option>
+        <option value="최진혁">최진혁</option></select
+      ><br /><br />
+      <input type="radio" name="choice" value="학식" checked />학식<br />
+      <input type="radio" name="choice" value="한솥" />한솥<br />
+      <input type="radio" name="choice" value="김천" />김천<br />
+      <input type="radio" name="choice" value="피자" />피자<br />
+      <input type="radio" name="choice" value="햄버거" />햄버거<br />
+      <input type="radio" name="choice" value="중국집" />중국집<br />
+      <br />
+      <input type="submit" value="투표하기" /><br />
+    </form>
+    <form action="/vote/result" method="GET">
+      <input type="submit" value="결과보기" />
+    </form>
+    <form action="/vote/menu" method="GET">
+      <input type="submit" value="메뉴" />
+    </form>
+    <form action="/vote/reset" method="POST">
+      <input type="submit" value="초기화" />
+    </form>
+    <form action="/" method="GET">
+      <input type="submit" value="홈" />
+    </form>
+  </body>
+</html>
