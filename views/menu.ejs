@@ -14,19 +14,33 @@
     input {
       font-size: 15pt;
     }
+    textarea {
+      font-size: 20pt;
+    }
+    body,
+    input,
+    select {
+      font-size: 15pt;
+    }
+    #name {
+      width: 80px;
+    }
   </style>
   <body>
-    <h1>메뉴</h1>
-    <textarea cols="30" rows="9" spellcheck="false">
-경석- 
-찬혁-
-진표-
-정균-
-한별-
-동인-
-진혁-
-해준-
-지민-
-    </textarea>
+    <form action="/vote/order/save" method="POST">
+      <select name="user" size="9">
+        <option value="김찬혁">김찬혁</option>
+        <option value="박정균">박정균</option>
+        <option value="신지민">신지민</option>
+        <option value="안진표">안진표</option>
+        <option value="오경석">오경석</option>
+        <option value="이동인">이동인</option>
+        <option value="이해준">이해준</option>
+        <option value="정한별">정한별</option>
+        <option value="최진혁">최진혁</option></select
+      ><br /><br />
+      메뉴 : <input type="text" name="menu" />
+      <input type="submit" value="저장" /><br />
+    </form>
   </body>
 </html>
