@@ -18,14 +18,15 @@
   </style>
   <body>
     <table border="2">
+      <th>이름</th>
       <th>메뉴</th>
-      <th>득표 수</th>
-      <% for(var i = 0; i< rows.length; i++) { %>
+      <% for(var i = 0; i<rows.length; i++) { %>
       <tr>
-        <td><%=rows[i].menu_name %></td>
-        <td><%=rows[i].cnt_menu %></td>
+        <td><%=rows[i].user_name %></td>
+        <td><%=rows[i].order_name %></td>
       </tr>
       <%}%>
     </table>
   </body>
 </html>
+

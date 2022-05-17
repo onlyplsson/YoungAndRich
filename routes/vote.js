@@ -48,7 +48,7 @@ router.post("/", function (req, res) {
 
 router.get("/result", function (req, res) {
   try {
-    var sql = `select menu_name, count(menu_name) as cnt_menu from VOTE group by menu_name;`;
+    var sql = `SELECT menu_name, COUNT(menu_name) AS cnt_menu FROM VOTE WHERE menu_name IS NOT NULL GROUP BY menu_name ;`;
     conn.query(sql, (err, rows, fields) => {
       if (err) {
         console.log(err);
@@ -89,9 +89,30 @@ router.post("/order/save", function (req, res) {
   }
 });
 
+router.get("/order_list", function (req, res) {
+  try {
+    var sql = `select * from CHOICE;`;
+
+    conn.query(sql, (err, rows, fields) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.render(path.join(__dirname, "../views/order.ejs"), {
+          rows: rows,
+        });
+      }
+    });
+  } catch (err) {
+    console.log(err);
+  }
+});
+
 router.post("/reset", function (req, res) {
   try {
-    var sql = `update VOTE set menu_name = NULL;`;
+    var sql =
+      `UPDATE VOTE SET menu_name = NULL;` +
+      `UPDATE CHOICE SET order_name = NULL;`;
+
     conn.query(sql, (err, rows, fields) => {
       if (err) {
         console.log(err);
